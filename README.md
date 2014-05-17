@@ -19,7 +19,7 @@ that you can easily map a proxy to. If this is the only thing running on your
 system you can map the port to 9100 and no proxy is needed. i.e.
 `-p=9100:9100`.
 
-    sudo docker run -d=true -p=9100:9100 srounet/docker-tor ./start.sh
+    sudo docker run -d=true -p=9100:9100 srounet/tor ./start.sh
 
 ### Notes on the run command
 
@@ -27,25 +27,15 @@ system you can map the port to 9100 and no proxy is needed. i.e.
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
 
-### Test it with python
+### What now?
 
-```python
-import requests
-proxies = {'http': 'http://localhost:9100'}
+Now you have a rotating socks proxy on port 9100. You can test it with
 
-# Should print your real ip
-response = requests.get('http://jsonip.com')
-print response.json()
-
-# Should print an ip from tor network
-response = requests.get('http://jsonip.com', proxies=proxies)
-print response.json()
-
-# Should print another ip from tor network
-response = requests.get('http://jsonip.com', proxies=proxies)
-print response.json()
+```
+$ curl --socks5 127.0.0.1:9100 wtfismyip.com/text
 ```
 
+You can also use it to proxy terminal applications using proxychains.
 
 ### Side notes
 
