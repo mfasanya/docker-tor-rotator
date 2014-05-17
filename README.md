@@ -8,9 +8,9 @@ This image will setup 10 tor, 10 delegate (one for each tor) and Haproxy to mana
 Running this will build you a docker image with the latest version of both
 docker-teamspeak and TeamSpeak itself.
 
-    git clone https://github.com/srounet/docker-tor
+    git clone https://github.com/mfasanya/docker-tor-rotator.git docker-tor
     cd docker-tor
-    docker build -t srounet/tor .
+    docker build -t mfasanya/tor .
 
 ## Running docker-tor
 
@@ -19,7 +19,7 @@ that you can easily map a proxy to. If this is the only thing running on your
 system you can map the port to 9100 and no proxy is needed. i.e.
 `-p=9100:9100`.
 
-    sudo docker run -d=true -p=9100:9100 srounet/tor ./start.sh
+    sudo docker run -d=true -p=9100:9100 mfasanya/tor ./start.sh
 
 ### Notes on the run command
 
