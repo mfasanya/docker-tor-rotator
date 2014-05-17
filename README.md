@@ -30,7 +30,3 @@ $ curl --socks5 127.0.0.1:9100 wtfismyip.com/text
 ```
 
 You can also use it to proxy terminal applications using proxychains.
-
-### Side notes
-
-This Readme is inspired by overshard/docker-teamspeak docker project.
