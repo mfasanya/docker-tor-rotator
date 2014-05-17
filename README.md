@@ -21,12 +21,6 @@ system you can map the port to 9100 and no proxy is needed. i.e.
 
     sudo docker run -d=true -p=9100:9100 mfasanya/tor ./start.sh
 
-### Notes on the run command
-
- + `srounet/docker-tor` is simply what I called my docker build of this image
- + `-d=true` allows this to run cleanly as a daemon, remove for debugging
- + `-p` is the port it connects to, `-p=host_port:docker_port`
-
 ### What now?
 
 Now you have a rotating socks proxy on port 9100. You can test it with
