@@ -30,6 +30,7 @@ ADD ./haproxy.conf /etc/default/haproxy.conf
 
 # prepare tor folders
 RUN mkdir -p /var/db/tor/1 /var/db/tor/2 /var/db/tor/3 /var/db/tor/4 /var/db/tor/5 /var/db/tor/6 /var/db/tor/7 /var/db/tor/8 /var/db/tor/9 /var/db/tor/10
+RUN mkdir -p /var/db/tor/11 /var/db/tor/12 /var/db/tor/13 /var/db/tor/14 /var/db/tor/15 /var/db/tor/16 /var/db/tor/17 /var/db/tor/18 /var/db/tor/19 /var/db/tor/20
 RUN chmod -R 700 /var/db/tor
 ADD start.sh /
 RUN chmod +x /start.sh
