@@ -1,7 +1,7 @@
-# Tor/Delegate/Haproxy a Docker Project #
+# Tor/Haproxy a Docker Project #
 
-The purpose of this project is to provide an image that you can you to have a pool of rotating ips through tor, delegate and haproxy.
-This image will setup 10 tor, 10 delegate (one for each tor) and Haproxy to manage all that which expose port 9100.
+The purpose of this project is to provide an image that you can you to have a pool of rotating ips through tor and haproxy.
+This image will setup 10 tor and Haproxy to manage all that which expose port 9100.
 
 ## Building docker-tor
 
