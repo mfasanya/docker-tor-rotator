@@ -12,18 +12,5 @@
 /usr/local/bin/tor --SocksPort 9059 --MaxCircuitDirtiness 10 --PidFile /var/run/tor/9.pid --RunAsDaemon 1 --DataDirectory /var/db/tor/9
 /usr/local/bin/tor --SocksPort 9060 --MaxCircuitDirtiness 10 --PidFile /var/run/tor/10.pid --RunAsDaemon 1 --DataDirectory /var/db/tor/10
 
-# launch 10 delegated
-DELEGATE_VERSION=9.9.7
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9151 SERVER=socks SOCKS=localhost:9051 PIDFILE=/var/run/delegated/1.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9152 SERVER=socks SOCKS=localhost:9052 PIDFILE=/var/run/delegated/2.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9153 SERVER=socks SOCKS=localhost:9053 PIDFILE=/var/run/delegated/3.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9154 SERVER=socks SOCKS=localhost:9054 PIDFILE=/var/run/delegated/4.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9155 SERVER=socks SOCKS=localhost:9055 PIDFILE=/var/run/delegated/5.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9156 SERVER=socks SOCKS=localhost:9056 PIDFILE=/var/run/delegated/6.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9157 SERVER=socks SOCKS=localhost:9057 PIDFILE=/var/run/delegated/7.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9158 SERVER=socks SOCKS=localhost:9058 PIDFILE=/var/run/delegated/8.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9159 SERVER=socks SOCKS=localhost:9059 PIDFILE=/var/run/delegated/9.pid OWNER=root/root
-/tmp/delegate${DELEGATE_VERSION}/src/delegated -P9160 SERVER=socks SOCKS=localhost:9060 PIDFILE=/var/run/delegated/10.pid OWNER=root/root
-
 # launch haproxy
 haproxy -f /etc/default/haproxy.conf -q -db
