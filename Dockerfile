@@ -21,13 +21,6 @@ RUN cd /tmp/tor-${TOR_VERSION} && ./configure
 RUN cd /tmp/tor-${TOR_VERSION} && make -j 4
 RUN cd /tmp/tor-${TOR_VERSION} && make install
 
-# install delegate
-ENV DELEGATE_VERSION 9.9.7
-RUN curl ftp://anonymous@ftp.delegate.org/pub/DeleGate/delegate${DELEGATE_VERSION}.tar.gz | tar xz -C /tmp
-RUN echo "ADMIN=root@root.com" > /tmp/delegate${DELEGATE_VERSION}/src/DELEGATE_CONF
-RUN sed -i -e '1i#include <util.h>\' /tmp/delegate${DELEGATE_VERSION}/maker/_-forkpty.c
-RUN cd /tmp/delegate${DELEGATE_VERSION} && make
-
 # install haproxy
 ENV HAPROXY_VERSION 1.4.25
 RUN curl http://haproxy.1wt.eu/download/1.4/src/haproxy-${HAPROXY_VERSION}.tar.gz | tar xz -C /tmp
