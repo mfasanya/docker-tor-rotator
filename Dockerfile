@@ -1,5 +1,5 @@
-# use the ubuntu base image 12.10
-FROM ubuntu:12.10
+# use the ubuntu base image 14.04
+FROM ubuntu:14.04
 
 # make sure the package repository is up to date
 RUN apt-get update
